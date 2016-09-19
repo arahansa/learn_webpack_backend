@@ -16,6 +16,8 @@ import java.util.List;
  */
 @Slf4j
 @RestController
+@RequestMapping({"/", "/api"})
+//@CrossOrigin(origins = "http://localhost:8080")
 public class MemberController {
 
 
@@ -24,6 +26,7 @@ public class MemberController {
 
   @GetMapping({"/", "/list"})
   public List<Member> memberList(){
+    log.debug("index...");
     return memberRepository.findAll();
   }
 
